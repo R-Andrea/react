@@ -1,5 +1,6 @@
 import "./App.css";
 import Button from "./components/button/button";
+import Booking from "./components/form/booking/booking"
 
 
 
@@ -14,13 +15,14 @@ function App() {
   // }
 
   function List () {
-    const listButtons = songs.map((song)=> <Button text={song}></Button>)
+    const listButtons = songs.map((song, i)=> <Button key={i.toString()} text={song}></Button>)
     return (listButtons)
   }
 
  
   return (
     <>
+      <Booking />
       <div className="form">
         <Button text="Send"/>
       </div>
@@ -28,6 +30,14 @@ function App() {
       <Button text="Send 2"/>
       </div>
       <ul><List></List></ul>
+
+      <div className="form4">
+        {songs.map(
+          function(song, index) {
+            return(<Button key={index.toString()} text={song}></Button>)
+          }
+        )}
+      </div>
     </>
   );
 }

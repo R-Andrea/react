@@ -2,26 +2,26 @@ import React from "react";
 import "./button.css";
 import { useState } from "react";
 
-let timeOut;
-let prevHTML;
-
-function clickHappened(text, f) {
-  console.log(prevHTML);
-  console.log(text, f);
-
-  const goodHTML = "Goodbye";
-
-  if (text !== goodHTML) {
-    prevHTML = text;
-    f(goodHTML);
-    timeOut = setTimeout(() => f(prevHTML), 3000);
-  } else {
-    clearTimeout(timeOut);
-    f(prevHTML);
-  }
-}
-
 function Button(props) {
+  let timeOut;
+  let prevHTML;
+
+  function clickHappened(text, f) {
+    console.log(prevHTML);
+    console.log(text, f);
+
+    const goodHTML = "Goodbye";
+
+    if (text !== goodHTML) {
+      prevHTML = text;
+      f(goodHTML);
+      timeOut = setTimeout(() => f(prevHTML), 3000);
+    } else {
+      clearTimeout(timeOut);
+      f(prevHTML);
+    }
+  }
+
   let [text, setText] = useState(props.text);
 
   return (
