@@ -2,6 +2,8 @@ import "./App.css";
 import Button from "./components/button/button";
 import Booking from "./components/form/booking/booking"
 
+import CounterC from "./components/counter/counterC"
+
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
  
   return (
     <>
+      
+      <CounterC /> 
       <Booking />
       <div className="form">
         <Button text="Send"/>
