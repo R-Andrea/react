@@ -1,7 +1,7 @@
 import "./App.css";
 import Button from "./components/button/button";
 import Booking from "./components/form/booking/booking"
-
+import Counter from "./components/counter/counterF";
 import CounterC from "./components/counter/counterC"
 
 
@@ -24,7 +24,7 @@ function App() {
  
   return (
     <>
-      
+      <Counter />
       <CounterC /> 
       <Booking />
       <div className="form">
