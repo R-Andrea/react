@@ -24,6 +24,17 @@
   color: white;
 }
 
+#root {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(45deg, #489ca6 12%, transparent 0, transparent 88%, #489ca6 0),
+    linear-gradient(135deg, transparent 37%, #006d77 0, #006d77 63%, transparent 0),
+    linear-gradient(45deg, transparent 37%, #489ca6 0, #489ca6 63%, transparent 0) #00424b;
+  background-size: 25px 25px;
+}
+
+
+
 .App-link {
   color: #61dafb;
 }
