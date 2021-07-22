@@ -29,38 +29,37 @@ const myTheme = createTheme({
   // }
 });
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%,-50%)",
+      backgroundColor: '#fafafa',
+      padding: "40px",
+      borderRadius: "35px",
+      margin: "20px",
+      '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+      display: "flex",
+      flexDirection: "column",
+      
+      },
+
+  },
+
+  }));
+  
+
 
 const forms = {};
 
 function App() {
 
+  const classes = useStyles();
 
 
-
-
-    const useStyles = makeStyles((theme) => ({
-    root: {
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%,-50%)",
-        backgroundColor: theme.palette.secondary.main,
-        padding: "40px",
-        borderRadius: "35px",
-        margin: "20px",
-        '& > *': {
-        margin: theme.spacing(1),
-        width: '25ch',
-        display: "flex",
-        flexDirection: "column",
-        
-        },
-
-    },
-  
-    }));
-    
-    const classes = useStyles();
 
   const [formSubmit, setFormSubmit] = useState(false)
 
@@ -77,11 +76,11 @@ function App() {
     }
 
     console.log(realForm)
-    let formID = realForm.id;
+      let formID = realForm.id;
 
       let array = Array.from(realForm)
   
-      console.log(Object.fromEntries(array.map((input) => [input.name, input.value])), formID)
+     // console.log(Object.fromEntries(array.map((input) => [input.name, input.value])), formID)
 
       let inputObject = Object.fromEntries(array.map((input) => [input.name, input.value]))
   
